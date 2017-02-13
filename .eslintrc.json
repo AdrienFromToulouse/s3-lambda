@@ -4,6 +4,13 @@
     "sourceType": "script"
   },
   "rules": {
+    "comma-dangle": ["error", "never"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/test/*.js"]
+      }
+    ],
     "lines-around-comment": ["warn", {
       "beforeLineComment": true,
       "afterLineComment": false,
@@ -11,12 +18,16 @@
       "afterBlockComment": true
     }],
     "padded-blocks": ["off"],
-    "comma-dangle": ["error", "never"],
     "no-plusplus": ["off"],
     "no-param-reassign": ["off"],
     "no-undef": ["off"],
     "strict": ["error", "global"],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "valid-jsdoc": ["error", {
+      "prefer": { "arg": "param", "argument": "param", "class": "constructor", "return": "returns", "virtual": "abstract" },
+      "preferType": { "boolean": "Boolean", "number": "Number", "object": "Object", "string": "String" },
+      "requireReturn": false
+    }]
   },
   "plugins": [
     "import"
